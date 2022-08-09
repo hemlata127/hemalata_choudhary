@@ -46,30 +46,3 @@ Discount
 Create table Items(ItemId INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ItemName VARCHAR(50), UnitPrice FLOAT, Discount FLOAT);
 
 ===========================================================
-
-
-
-DisplayBanner();
-	now = datetime.now();
-	formatted_date = now.strftime('%Y-%m-%d %H:%M:%S');
-	sql_insert_query = 'INSERT INTO storemanagement.customers (FirstName, LastName, PhoneNumber, EmailId, LastStoreVisit, Address) VALUES (%s %s %s %s %s %s)';
-	val = ('Hemalata', 'CHoudhary', '9860397098', 'hemlata127@gmail.com', formatted_date, 'Pune');
-	mycursor.execute(sql_insert_query, val);
-	mydb.commit();
-	DisplayMenu();	
-	
-	
-	
-
-#Order details
-Create table OrderDetails(BillNo INT NOT NULL AUTO_INCREMENT PRIMARY KEY, OrderId INT, ItemId INT, Quantity INT, ItemTotal FLOAT, FOREIGN KEY(OrderId) REFERENCES Orders(OrderId), FOREIGN KEY (ItemId) REFERENCES Items(ItemId));
-	
-	
-	
-	
-	
-	
-	
-	
-	INSERT INTO storemanagement.customers (CustomerId, FirstName, LastName, PhoneNumber, EmailId, Address) 
-VALUES (101, 'Hemalata', 'Choudhary', '9860397098', 'hemlata127@gmail.com', 'Pune')
