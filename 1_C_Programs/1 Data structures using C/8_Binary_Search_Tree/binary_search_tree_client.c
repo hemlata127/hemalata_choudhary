@@ -1,4 +1,4 @@
-#include "binary_search_tree.h"
+#include "binary_serach_tree.h"
 
 int main(void)
 {
@@ -9,7 +9,7 @@ int main(void)
     uint_t i;
     int choice = 1;
 
-    p_bst = create_bst();
+    p_bst = bst_create();
 
     puts("=====================================================");
     puts("IMPLEMENTATION OF BINARY SEARCH TREE");
@@ -53,24 +53,24 @@ int main(void)
 
             case 3:
                 puts("PREORDER TREE TRAVERSAL");
-                preorder_r(p_bst);
+                bst_preorder_display_r(p_bst);
                 break;
 
             case 4:
                 puts("INORDER TRAVERSAL");
-                inorder_r(p_bst);
+                bst_inorder_display_r(p_bst);
                 break;
 
 
             case 5:
                 puts("POSTORDER TRAVERSAL");
-                postorder_r(p_bst);
+                bst_postorder_display_r(p_bst);
                 break;
 
             case 6:
                 printf("Enter data to search: ");
                 scanf("%d",&e_data);
-                status = bst_search(p_bst, e_data);
+                status = bst_search_data(p_bst, e_data);
                 if(status == TRUE)
                     printf("%d is present in tree\n",e_data);
                 else if(status == FALSE)
@@ -80,7 +80,8 @@ int main(void)
             case 7:
                 printf("Enter data whose predecessor to find: ");
                 scanf("%d",&e_data);
-                status = find_bst_inorder_predecessor(p_bst, e_data, &pred_data);
+                status = bst_inorder_predecessor(p_bst, e_data, &pred_data);
+                printf("status = %d\n",status);
                 if(status == TREE_NO_PREDECESSOR)
                     printf("%d has no predecessor\n",e_data);
                 else if(status == SUCCESS)
@@ -90,7 +91,8 @@ int main(void)
             case 8:
                 printf("Enter data whose successor to find: ");
                 scanf("%d",&e_data);
-                status = find_bst_inorder_successor(p_bst, e_data, &pred_data);
+                status = bst_inorder_successor(p_bst, e_data, &pred_data);
+                printf("status = %d\n",status);
                 if(status == TREE_NO_SUCCESSOR)
                     printf("%d has no successor\n",e_data);
                 else if(status == SUCCESS)
@@ -98,13 +100,13 @@ int main(void)
                 break;
 
             case 9:
-                status = find_bst_max(p_bst, &max_data);
+                status = bst_find_max(p_bst, &max_data);
                 if(status == SUCCESS)
                     printf("Max data = %d\n",max_data);
                 break;
 
             case 10:
-                status = find_bst_min(p_bst, &min_data);
+                status = bst_find_min(p_bst, &min_data);
                 if(status == SUCCESS)
                     printf("Min data = %d\n",min_data);
                 break;
@@ -113,11 +115,11 @@ int main(void)
             case 11:
                 printf("Enter data to remove: ");
                 scanf("%d", &e_data);
-                status = remove_data(p_bst, e_data);
+                status = bst_remove_data(p_bst, e_data);
                 if(status == SUCCESS)
                 {
                     printf("BST after removing %d: \n",e_data);
-                    inorder_r(p_bst);
+                    bst_inorder_display_r(p_bst);
                 }
                 else if(status == TREE_DATA_NOT_FOUND)
                     printf("%d not found in the tree\n",e_data);
@@ -131,7 +133,6 @@ int main(void)
                 puts("Incorrect option, please try again");
         }
     }
-
 
     exit(EXIT_SUCCESS);
 }
