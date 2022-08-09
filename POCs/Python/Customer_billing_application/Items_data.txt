@@ -1,0 +1,22 @@
+#DB design scripts for stor management system
+
+#Customers table
+Create table Customers (CustomerId int NOT NULL AUTO_INCREMENT PRIMARY KEY, FirstName VARCHAR(50), LastName VARCHAR(50), PhoneNumber VARCHAR(25), EmailId VARCHAR(50), LastStoreVisit DATE, Address VARCHAR(50));
+
+#Create Items table
+Create table Items(ItemId INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ItemName VARCHAR(50), UnitPrice FLOAT, Discount FLOAT);
+
+#Insert data into Items table - static data
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Pen',5.00,0.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Pencil',2.00,0.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Note book',90.00,5.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Eraser',10.00,0.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Chart Paper',15.00,0.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Color Pencils',5.00,0.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Water Colors',5.00,10.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Dictionary',150.00,15.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Calendar',45.00,0.0);
+insert into items (ItemName, UnitPrice, Discount) VALUES ('Diary',55.00,5.0);
+
+#Orders table
+Create table Orders(OrderId int NOT NULL AUTO_INCREMENT PRIMARY KEY, CustomerId int, OrderDate DATE, OrderTotal FLOAT, FOREIGN KEY (CustomerId) REFERENCES Customers(CustomerId));
