@@ -101,8 +101,8 @@ void test_string_compare_cs()
 
 void test_string_compare_ncs()
 {
-    puts("Function name: string_compare_cs()");
-    puts("Description: compare two strings in case sensitive manner");
+    puts("Function name: string_compare_ncs()");
+    puts("Description: compare two strings in case insensitive manner");
     schar_t p_str_1[100], p_str_2[100];
     status_t status;
     printf("Enter string1: ");

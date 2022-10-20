@@ -885,7 +885,6 @@ status_t remove_preffix(schar_t** pp_str, schar_t* p_str_prefix)
     string_length(p_str, &len_str);
     string_length(p_str_prefix, &len_prefix);
     get_substring_by_range(p_str, len_prefix, len_str-1, &p_str);
-    printf("p_str = %s\n",p_str);
     *pp_str = p_str;
     return SUCCESS;
 }
