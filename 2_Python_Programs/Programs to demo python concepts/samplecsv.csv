@@ -1,0 +1,13 @@
+﻿DOMAIN,INBOUND QUEUE,INBOUND TREND,INBOUND MEAN TIME,INBOUND OLDEST EMAIL,OUTBOUND QUEUE,OUTBOUND TREND,OUTBOUND MEAN TIME,OUTBOUND OLDEST EMAIL
+alerts22.barclaycardus.com,400,-9148,19 m,12 h 57 m,600,-733,8 h 36 m,18 h 32 m
+alerts22.juniper.com,4,-8909,0 m,0 m,6,-10310,0 m,0 m
+zzapptixqasanitymadhurivirtualserverscqweecpsep14.sub.mig.apptixlab22.net,4,0,0 m,0 m,6,0,0 m,0 m
+aws22.cloudaccounts.barclays,4,-2212,0 m,0 m,6,-50,0 m,0 m
+aa22.barclaycardus.com,4,-442,0 m,0 m,6,-2561,0 m,0 m
+bb22.juniper.com,4,-218,0 m,0 m,6,-570,0 m,0 m
+alerts.barclaycardus.com,9548,9148,2 h 43 m,2 h 33 m,1333,733,1 d 3 h 15 m,18 h 32 m
+alerts.juniper.com,8913,8909,2 h 34 m,39 m,10316,10310,5 m,39 m
+zzapptixqasanitymadhurivirtualserverscqweecpsep14.sub.mig.apptixlab.net,4,0,0 m,0 m,6,0,0 m,0 m
+aws.cloudaccounts.barclays,2216,2212,19 m,54 m,56,50,9 h 55 m,39 m
+aa.barclaycardus.com,446,442,9 h 4 m,10 m,2567,2561,6 m,13 m
+bb.juniper.com,222,218,20 m,39 m,576,570,3 h 40 m,39 m

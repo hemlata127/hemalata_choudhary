@@ -11,6 +11,7 @@ from email.mime.text import MIMEText;
 from email.mime.base import MIMEBase;
 from email.mime.multipart import MIMEMultipart;
 
+#finds and returns checksum of file passed
 def GetChecksum(path, blocksize = 1024):
     fd = open(path,'rb');
     h = hashlib.md5();
@@ -76,10 +77,10 @@ def DuplicateFile(path,toaddress):
             totalscanned = totalscanned+1;
         
     newdata = list(filter(lambda x:len(x)>1,data.values()));
-    if os.path.exists("Marvellous") == False:
-        os.mkdir("Marvellous",mode=777);
+    if os.path.exists("CleanupLogs") == False:
+        os.mkdir("CleanupLogs",mode=777);
     currenttime = datetime.datetime.now().strftime("%d%m%Y%H%M%S");
-    filename = "Marvellous\log"+currenttime+".txt";
+    filename = "CleanupLogs\log"+currenttime+".txt";
     fd1 = open(filename,'a');
     fd1.write("\nFollowing duplicate files are removed: at %s"%(datetime.datetime.now()));
     fd1.write("\n"+"-"*60);
@@ -109,7 +110,9 @@ def main():
         print("This is duplicate file removal script");
         exit();
     if sys.argv[1] == "-u":
-        print("demo.py dir1");
+        print("Use the script as: DuplicateFileRemoval.py TestDir RunDuration ToEmailAddress");
+		print("TestDir: The directory whose duplicate files are to be removed");
+		print("RunDuration: Script schedule duration in minutes");
         exit();
 		
     scheduleduration = int(sys.argv[2]);

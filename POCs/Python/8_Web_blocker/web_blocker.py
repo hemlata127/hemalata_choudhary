@@ -3,8 +3,11 @@ from time import *;
 from datetime import datetime as dt;
 
 #definition of the required variables
+#path of the host file o windows
 host_path = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+#IP address that the website to be blocked should be redirected to
 redirect = "127.0.0.1";
+#list of websites to be blocked
 websites = ["https://facebook.com", "www.facebook.com"];
 
 #setting up the infinite loop
@@ -25,6 +28,6 @@ while(True):
 		fileptr.seek(0);
 		for line in content:
 			if not any(website in line for website in websites):
-				file.write(line);
+				fileptr.write(line);
 		fileptr.truncate();
 	sleep(5);

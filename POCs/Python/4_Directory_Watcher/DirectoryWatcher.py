@@ -1,7 +1,8 @@
 '''Automation script which accept directory name from user and display all names of files
 from that directory.'''
 
-from sys import *;
+#import the required modules
+from sys import *; # required for argv
 import os;
 
 def DirectoryWatcher(path):
