@@ -13,7 +13,7 @@ class TelephoneDirectory:
         self.myconnection = mysql.connector.connect(
 		host = "localhost",
 		user = "anwesha",
-		password = "Eastonia@01"
+		password = "xxxxxx"
 		);
 
         #create cursor to execute queries

@@ -12,7 +12,7 @@ class StoreManagement:
 		self.myconnection = mysql.connector.connect(
 		host = "localhost",
 		user = "anwesha",
-		password = "Eastonia@01"
+		password = "xxxxx"
 		);	
 
 		self.mycursor = self.myconnection.cursor();	
