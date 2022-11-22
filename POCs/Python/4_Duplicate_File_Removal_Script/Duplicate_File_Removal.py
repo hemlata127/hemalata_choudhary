@@ -47,7 +47,7 @@ def MailSender(filename,time,totalscanned,totalduplicates,toaddress):
 		msg.attach(p);
 		smtpobj = smtplib.SMTP('smtp.gmail.com',587);
 		smtpobj.starttls();
-		smtpobj.login('hemlata127@gmail.com','(@anwesha02$)');
+		smtpobj.login('hemlata127@gmail.com','xxxxxx');
 		text = msg.as_string();
 		smtpobj.sendmail(fromaddress,toaddr,text)
 		smtpobj.quit();
@@ -68,6 +68,7 @@ def DuplicateFile(path,toaddress):
     totalscanned=0;
     for Folder,Subfolder,Files in os.walk(path):
         for name in Files:
+			#convert filename to absolute path
             name = os.path.join(Folder,name);
             checksum = GetChecksum(name);
             if checksum in data:
@@ -75,7 +76,8 @@ def DuplicateFile(path,toaddress):
             else:
                 data[checksum] = [name];
             totalscanned = totalscanned+1;
-        
+    
+	# newdata will contain list of checksums that have file count more than 1
     newdata = list(filter(lambda x:len(x)>1,data.values()));
     if os.path.exists("CleanupLogs") == False:
         os.mkdir("CleanupLogs",mode=777);

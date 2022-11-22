@@ -252,7 +252,7 @@ Output: 0 1 1 2 3 5 8 13 21 34
 
 ==================================================================================
 42_LuckyNumber
-Accept N numbers from user and display all lucky numbers from thosee numbers
+Accept N numbers from user and display all lucky numbers from those numbers
 Lucky number is such a number whose value is addition of its neighbours
 Input N = 10
 5 8 12 4 -8 8 10 2 2 0
