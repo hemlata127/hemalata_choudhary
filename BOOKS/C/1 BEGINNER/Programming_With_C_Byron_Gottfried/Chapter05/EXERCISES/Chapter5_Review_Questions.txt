@@ -1,0 +1,92 @@
+1.
+What is meant by "top-down" programming? What are its advantages? How is it carried out?
+Ans.
+A programming approach in which high level modules are developed first and then you drill down to further details and develop modules with finer details. Basic structure of the program is created. Then in each iteration you add finer details to the program by adding lower level modules with more details.
+
+2.
+What is meant by "bottom-up" programming? How is it different from top down programming?
+Ans.
+In this all lower level modules are developed first and then they are combined incrementally to develop the entire software/program.
+
+3.
+Why are some statements indented within a C program? Is this indentation absolutely necessary?
+Ans.
+Certain statements in a C program are indented to improve the readabiity of the program. Indentation marks a group of statements that must be executed in a sequence. Indentation is not compulsory but makes a program more clear to read and understand.
+
+4.
+What are the reasons for placing comments within a C program? How extensive should these comments be?
+Ans.
+Comments makes a program easier to read and understand the logic of certain part of the program.
+They help the author of the program to understand his own program logic at a later date or even helps another person to understand the program in better manner. Single line comments are written using // and multiline comments are enclosed in /* */
+
+5.
+What is syntactic error? Name some common syntactic errors.
+Ans.
+Syntactic errors are errors that are caused by using incorrect programming language syntax.
+eg: missing semi colon
+unmatched brackets
+
+6.
+What is an execution error? Name some common execution errors.
+Ans.
+An error encountered when a program is executed is called execution error.
+eg: divide by zero
+index out of range/bound
+illegal memory access
+
+7.
+How do syntactic errors and execution errors differ from one another?
+Ans.
+Syntactic errors are found when we compile a program. These are due to incorrect programming language syntax.
+Execution errors are found when we run a program.
+
+8.
+What is a logical error? How do logical errors differ from syntactic and execution errors?
+Ans.
+Logical errors are errors that come up due to incorrect programming logic. These will be found when we run our program and compare the results with the expected result.
+These can be due to incorrect use of certain operators for eg > instead of >=, incorrect use of formula, incorrect arguments passed, etc.
+
+9.
+What is the difference between compilation messages and execution messages? Name some situations in which each type of diagnostic message would be generated.
+Ans.
+When there is some syntactic error, there would be compilation messages displayed by the compiler at the time of compilation. If there are execution errors, tey may be some messages.
+eg of compilation messages: use of a variable that is not declared, missing semicolon
+eg of execution messages: divide by zero error, array index out of range error
+
+10.
+What is an error isolation? What is it used for? How is error isolation out?
+Ans.
+If there is an error in the program, trying to identify the statement or part of the program that is causing that error is called error isolation. This can be achieved by tracing, repeated commenting different parts of programs, using debugger features like adding a watch list, break points, stepped execution, etc.
+
+11.
+What is tracing? What is it used for? How is tracing carried out?
+Ans.
+Displaying the value of a variable as the program executes is called tracing.
+Tracing can be carried out by printing value of a variable in different parts of the program and observe its value as the program is executed.
+
+
+12.
+What is an interactive debugger? What special features are made available by a debugger?
+Ans.
+Interactive debugger is a tool available in commonly used IDEs that helps us in debugiing the errors and bugs. They provide features such as watch list, stepped execution, breakpoints, etc.
+
+13.
+What are watch values? What are watch value used for? In general terms, how are watch values defined?
+Ans.
+Watch values are feature of a debugger where a variable ued in the program is added to a watch list and its value is displayed as the program executes. Watch values are used to identify logical errors. These are defined by adding a variable to the watch list option provided by the debugger.
+
+14.
+What are breakpoints? What are they used for? In general terms, how are breakpoints defined?
+Ans.
+Breakpoints is the debugging feature provided in most of the debugger tools. Using this we can define breakpoints in our program and perform program execution in such a way that the execution pauses at the breakpoint and then we can carry out stepped execution, either one instruction at a time or execution till the next breakpoint. This helps in debugging and finding the error source.
+
+15.
+What is stepping? What is it used for? In general terms, how is stepping carried out?
+Ans.
+Stepping is one of the feature of debugger tool that facilitates stepped program execution which can be one step at a time or execution till the next break point.
+
+16.
+Describe how watch values can be used with breakpoints and stepping to monitor the progress of a program's execution?
+Ans.
+Watch values, breakpoints and stepping are all features of a debugger tool. These can be used to find error, isolate program code that is causing error, understnding program logic and execution flow.
+Define appropriate watch values for important variables, define breakpoints in the program and perform stepped execution to monitor the flow of program execution.

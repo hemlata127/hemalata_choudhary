@@ -1,0 +1,40 @@
+- A program consists of one or more functions
+- A C program can consist of multiple files or one file and multiple functions
+- A variable is of two types - local and global
+- A local variable can be accessed from within the function in which it is defined
+- Sometimes it is desirable to have a local variable retain its value across function calls
+- Variable can have data type - variable can have storage class
+
+Data type of a variable tells the compiler:
+- The type of data that will be stored in that variable
+- The number of bytes required in memory for that variable
+ The valid computations that can be performed on that variable
+
+Storage class of a variable tells:
+- Scope of a variable - accessibility of the variable from different parts of the program
+- Lifetime of the variable - how long the variable remains in memory
+- Four storage classes - auto, register, static, extern
+
+Auto storage class
+- default storage class for a variable defined inside a function
+- Its scope is within the function
+- its lifetime is as long as the program control remains in the function
+- if not initialised, it may contain garbage value
+
+External variable
+- Also called global variable
+- It is defined outside all the functions
+- Can be used within any function inside the program
+- External variable definition need not use the keyword extern
+- External variable definition can initialise the variable
+- External variable definition is outside all the functions
+- Memory allocation happens when an external variable is defined
+- External variable declaration is done within a function where it is intended to be used
+- No memory allocation happens when the external variable is declared
+- extern keyword is used for declaraing the external variable
+
+Static storage class
+- static storage class for a local variable makes its value to persist between the function calls
+
+
+

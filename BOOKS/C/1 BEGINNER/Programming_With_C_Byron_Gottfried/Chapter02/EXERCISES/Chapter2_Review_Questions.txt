@@ -1,0 +1,238 @@
+1. 
+Summarise the rules for naming identifiers. Are uppercase letters equivalent to lowercase letters? Can digits be included in identifier names? Can any special characters be included?
+Ans. 
+Rules for naming identifier:
+i) An identifier name should be meaningful and idicate what the data item represents.
+ii) It must begin with an alphabet
+iii) It can have numbers but should not have numbers at the beginning
+iv) - and _ can be included. Other special characters should not be included
+v) Maximum allowable width for an identifier name depends on compiler
+
+2. 
+What are the keyword in C? What restrictions apply to their use?
+Ans. 
+keywords are the words whose meaning, the C compiler knows. keywords should not be used as an identifier name.
+
+3. 
+Name and describe the four basic data types in C.
+Ans. 
+C language provides following four basic data types:
+i) char - occupies one byte in memory. Used to hold ASCII value of a character which ranges from 0 to 255
+ii) int - its size depends on the compiler and platform, but is mostly 4 bytes
+sub data types of int created by using the qualifiers that affect size and qualifiers that affect range:
+short
+int
+long
+long long
+each of the above type can be:
+signed
+unsigned
+hence the total list becomes:
+signed short
+signed int
+signed long
+signed long long
+unsigned short
+unsigned int
+unsigned long
+unsigned long long
+iii) float - occupies 4 bytes - used to store decimal numbers - numbers with fractions
+gives single precision
+iV) double - occupies 8 bytes - used to store decimal numbers - numbers with fractions
+gives double precision
+
+4. 
+Name and describe the 4 data type qualifiers. To which data type can each be applied?
+Ans. 
+i)signed - used to store signed integer
+ii)unsigned - used to store unsigned integer
+iii)short - size of short is usually half or equal to int
+iv)long - size of long is usually double or equal to int
+
+5. 
+Summarise the rules that apply to all numeric type constants.
+Ans. 
+numeric type constants can be integer constants or decimal constants
+Integers can have digits, should not have spaces, hyphens and underscore
+Can have + or - sign, default sign is +
+Decimal numbers has decimal point, fraction part and exponent part
+Can have + or - sign, default sign is +
+
+6. 
+When writing integer constants, how are decimal constants, octal constants and hexadecimal constants distinguished from each other?
+Ans. decimal constant is not preceded by any character
+octal constant is preceded by o
+hexadecimal constant is preceded by x
+
+7. 
+Typically, what is the largest permissible magnitude of an integer constant? State your answer in decimal, octal, hexadecimal.
+Integer is 4 bytes - 32 bits - 2^32
+4294967296 decimal
+100000000 hexadecimal
+40000000000 octal
+
+8. 
+What are unsigned integer constants? What are long interger constants? How do these constants differ from ordinary integer constants? How can they be written and identified?
+Ans. 
+An unsigned integer constant represents positive integers only.
+Long integer constant size is equal to or greater than integer constant size.
+unsigned int (U)
+long int (L)
+
+9. 
+Describe two ways a floating point constant can be written. What special rule applies in each case
+Ans.
+In decimal format - using decimal point eg 1.2545
+In exponential format - has mantisa part and exponent part - eg 1.25E3 (this is same as 1.25 * 10^3)
+
+10. 
+What is the purpose of the optional exponent part in the floating point constant
+Ans.
+The effect of the exponent part is to shift the decimal point to the right if it is positive and shift the decimal point to the left if it is negative
+
+11.
+Typically what is the largest pemissible magnitude of a floating point constant. Compare it with an interger constant.
+Ans.
+3.4E-38 to 3.4E38
+1.7E-308 to 1.7E308
+FLoating points have much larger magnitude range than interger constants
+
+12.
+How can single precision and long floating point constanst be written and identified?
+Ans.
+Single precision is written using float
+Double precision is written using long float or double
+
+13.
+Describe the differences in accuracy between integer and floating point constants. Under what circumstances should each type of constant be used.
+Ans.
+Interger constants should be used to represent the integers - both positive and negative (without any decimal points)
+Floating point constants should be used to represent the decimal numbers - fractions
+For single precision use float and for greater (double) precision use double
+Floating point constants are more accurate that integer constants.
+
+14.
+What is a character constant? How do character constants differ from numeric type constants? Do character constants represent numerical values?
+Ans.
+A character constant is used to represent a single character. It is defined as a single character enclosed in single quaotes. This can be upper or lower case alphabets, digits or special symbols. Character constants represent numerical values - ASCII values. Each character constant is assigned a unique numerical value as per ASCII standards
+
+15.
+What is the ASCII character set.How common is it used?
+Ans.
+ASCII - stands for American Standard Code for Information Interchange.
+Each character has a unique ASCII code which is stored in the memory for that character.
+It uses one byte using which 0 to 255 numbers are assigned to each character.
+It is most commonly used standard
+
+16.
+What is an escape sequence? What is its purpose?
+Ans.
+A special character sequence that can contain two or more characters but they represent a single special character which is a non printing character. Eg: \n for newline, \b for backspace, \t for tab
+
+17.
+Summarize the standard escape sequences in C. Describe the other commonly available non standard escape sequences
+Ans.
+\n	newline
+\b	backspace
+\r  carriage return
+\t  tab
+\v  vertical tab
+\0  null
+\f  form feed
+
+18.
+What is a string constant? How do string constants differ from character constants? Do string constants represent numerical values?
+Ans.
+String constant is one or more sequence of characters enclosed in double quotes. A character constant is a single character enclosed in single quotes.
+A string is terminated with a null character (\0). This is added by the compiler.
+No null character exists for character constant
+A character constant has a single numerical value. But string constants do not have a single numerical value. They are seuqnce of multiple characters and each character has a numerical value
+
+19.
+Can escape sequence be included in a string constant. Explain.
+Ans.
+Escape sequences can be included in a string constant
+eg: "Hello\tWorld\n"
+These will be interpreted as escape sequences
+
+20.
+What is a variable? How can variables be characterized?
+Ans.
+A variable is a name given to a memory location. 
+It must be declared before it can be used in a computational statement.
+A variable name is preceded by a data type in declaration statement.
+It can also be initialised with an initial value.
+Its value can be changed during the program execution, but its data type cannot be changed.
+
+21.
+What is an array variable? How does an array variable differ from an ordinary variable?
+Ans.
+An array variable is a name given to collection of homogenous data elements that are stored in memory contigously.
+An ordinary variable is a name given to a single data element stored in memory.
+
+22.
+How can individual array elements be distinguished from one another?
+Ans.
+Individual array elements can be distinguished from one another through their subscript or index.
+Each array element can be accessed using the name of the array (which is base address of the first element of the array) and index
+
+23.
+What is a subscript? What range of values is permitted for the subscript of a one-dimensional element array?
+Ans.
+A subscript of an array element is a positive number that indicates the position of that array element in the array. Subscript is also called an index. Subscript can have a positive value.
+
+24.
+What is the purpose of type declaration? What does a type declaration consist of?
+Ans.
+Type declaration of a data element indicates the data type of that element, amount of memory to be reserved for that data element and allowable operations for that data element.
+A type declaration consists of data type followed by the name of the data element. eg: <data type> <name>, int num;
+
+25.
+How are initial values assigned to variables within a type declaration? How are strings assigned to one-dimensional, character type arrays?
+Ans.
+A data element can be assigned an initial value in its type declaration statement. This included data type, followed by name of data element, followed by an assignment operator and value to be assigned. eg: int num = 100;
+Strings are assigned by including them in double quotes
+eg: char str[] = "Hello";
+
+26.
+What is an expression? What kind of information is represented by an expression?
+Ans.
+An expression is a statement that contains opertors and operands.
+An expression represents operators that tell what operation is to be performed and opearnds which tell the operation is to be performed on what?
+
+27.
+What is an operator? Describe several different types of operators that are included within the C language.
+Ans.
+An operator is a symbol that represents an operation to be performed on the operands.
+Eg: + is addition opeartor that tells, numbers are to be added or addition opeartion is to be performed.
+Types of operators in C language:
+Arithmetic operators (+ - * / %)
+Logical operators (&& || !)
+Relational operators (< > <= >= == !=)
+Array subscript operator []
+Indirection operator *
+Pointer opeartor *
+sizeof opeartor
+Address of operator &
+
+28.
+Can statements be embedded within other statement?
+Ans.
+Yes one or more statements can be embedded within other statements.
+Such statements are called compound statements. They are enclosed within curly braces {}
+
+29.
+What is a symbolic constant? How is a symbolic constant defined? How is the definition written? Where must a symbolic constant definition be placed within a C program?
+Ans.
+Name given to a constant value is called a symbolic constant. A symbolic constant is defined using the preprocessor directive #define
+eg: #define PI 3.141593
+A symbolic constant should be definedat the beginning of the C program. Name of a symbolic constant should ideally be written in capital letters.
+
+30.
+During the compilation process, what happens to symbolic constants that appear within a C program?
+Ans.
+During the compilation process all symbolic constants within the C program are replaced with their values.
+
+
+
+

@@ -1,0 +1,59 @@
+1.
+#include<stdio.h>
+int main()
+{
+	char num = '\011';		//octal 11 means decimal 9
+	printf("%d",num);
+	return 0;
+}
+No error
+Output = 9
+
+2.
+#include<stdio.h>
+int main()
+{
+	10;
+	printf("%d", 10);	//you can use constant or variable in argument list for printf function
+}
+No error 
+Output = 10
+
+3.
+Which of the following data type is right in C programming?
+A.
+long long double
+incorrect
+B.
+unsigned long long int
+correct
+C.
+long double int
+incorrect
+D.
+unsigned long double
+incorrect
+
+4.
+#include<stdio.h>
+int main()
+{
+	void num = 10;
+	printf("%v",num);
+	return 0;
+}
+error
+void is not a standard data type
+you cannot create an object o ftype void
+
+5.
+#include<stdio.h>
+int main()
+{
+	int num = 10;
+	printf("%v",num);
+	return 0;
+}
+No error
+%v is not a valid format specifier or control character in C, so %v is printed as it is, num is not printed
+output = v

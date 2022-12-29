@@ -1,0 +1,26 @@
+Expression
+- different constants, variables, function references, arrays combine together with operators for an expression
+- Data items on which operators operate - operands
+- Different operators based on number of operands - unary, binary
+- Different arithmetic opeartors +, - *, /, %
+- operands with different types undergo type conversion before they are used in an expression
+- when precision of oprands differ - operands with lower precision is converted to operand with higher precision, the result has higher precision
+eg: short, int - result = int
+int float - result = float
+- precedence groups
+*, /, % fall in one precedence group
++, -, fall in another precedence group
+- within the same precedence group, opeartors are evaluated from left to right
+- natural precedence can be altered using paranthesis
+- paranthesis can be nested - innermost operations are carried out first
+
+unary operators
+- negate - opeartor
+- increment - post increment, pre increment
+- decrement - post decrement, pre decrement
+- size of opeartor
+- cast operator - (type)
+- unary opeartors have higher precedence than arithmetic opeartors
+
+Relational opeartors
+- 

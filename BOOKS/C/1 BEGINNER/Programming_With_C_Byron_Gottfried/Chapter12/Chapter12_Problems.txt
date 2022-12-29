@@ -1,0 +1,557 @@
+1.
+Define a structure consisting of two floating point numbers, called real and imaginary. Include the tag complex within the dfinition.
+Ans.
+struct complex
+{
+	float real;
+	float imaginary;
+};
+
+2.
+Declare the variables x1, x2 and x3 to be structures of type complex as described in the preceding problem.
+Ans.
+struct complex x1, x2, x3;
+
+3.
+Combine the structure definition and the variable declarations described in problem 1 and 2 into one declaration.
+Ans.
+struct complex
+{
+	float real;
+	float imaginary;
+} x1, x2, x3;
+
+4.
+Declara a variable x to be a structure variable of type complex as described in problem 1 . Assign the initial values 1.3 and -2.2 to the members x.real and x.imaginary respectively.
+Ans.
+struct complex
+{
+	float real;
+	float imaginary;
+};
+struct complex x;
+x.real = 1.3;
+x.imaginary = -2.2;
+
+5.
+Declarae a pointer variable px which points to a structure of type complex as described in problem 1. Write expressions for the structure members in terms of the pointer variable.
+Ans.
+struct complex
+{
+	float real;
+	float complex;
+};
+struct complex* px;
+structure members in terms of px are - px->real, px->complex
+
+6.
+Declarae a one-dimensional 100 element array called cx whose elements are structures of type complex as described in problem 1.
+Ans.
+struct complex
+{
+	float real;
+	float imaginary;
+};
+struct complex cx[100];
+
+7.
+Combine the structure definition and the array declaration described in problem 1 and 6 into one declaration.
+Ans.
+struct complex
+{
+	float real;
+	float complex;
+} cx[100];
+
+8.
+Suppose that cx is one dimensional 100 element array of structures as described in problem 6. Write expressions for the members of the 18th array element (i.e. element number 17)
+Ans.
+struct complex
+{
+	float real;
+	float imaginary;
+} cx[100];
+Members of 18th array element:
+cx[17].real, cx[17].imaginary
+
+9.
+Define a structure that comtains the following three members:
+a) An integer quantity called won
+b) An integer quantity called lost
+c) A floating point quantity called percentage
+Ans.
+struct record
+{
+	int won;
+	int lost;
+	float percentage;
+};
+
+10.
+Define a structure that contains following two members:
+a) A 40 element character array called name.
+b) A structure named stats of type record as defined inproblem 9.
+Include the user defined data type record within the definition.
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		float percentage;
+	} stats;
+};
+
+11.
+Declare a variable t to be a structure variable of type team as described in problem 10. Write an expression for each member and submember of t
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		float percentage;
+	} stats;
+};
+struct team t;
+Members and submembers of t:
+t.name;
+t.record.won;
+t.record.lost;
+t.record.percentage;
+
+12.
+Declare a variable of type t to be a structure variable of type team, as in the previous problem. Now initialise t as
+name: Chicago Bears
+won: 14
+lost: 2
+percentage: 87.5
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		int percentage;
+	} stats;
+} ;
+struct team t;
+t.name = "Chicago Bears";
+t.record.won = 14;
+t.record.lost = 2;
+t.record.percentage = 87.5;
+
+13.
+Write a statement that will display the size of the memory block associated with the varaible t which was described in problem 11.
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		float percentage;
+	} stats;
+} t;
+printf("Size of t is %d bytes\n",sizeof(t));	//52 bytes
+
+14.
+Declare a pointer variable pt to a structure of type team, as described in problem 10. Write an expression for each member and submember within the structure.
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		float percentage;
+	} stats;
+};
+struct team* pt = NULL;
+pt->name, pt->stats.won, pt->stats.lost, pt->stats.percentage
+
+15.
+Declare a one dimensionl 48 element array called league whose elements are the structures of types team as described in problem 10. Write expressions for the name and percentage of the fifth team in the league (team number 4).
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		float percentage;
+	} stats;
+};
+struct team league[48];
+Expression for name and percentage of the fifth team in the leage:
+league[4].name;
+league[4].stats.percentage;
+
+16.
+Declare a self referential structure containing the following three members:
+a) A 40 element character array called name
+b)A structure named stats of type record as defined in problem 9.
+c) A pointer to another structure of this same type called next.
+Include the tag team within the structure definition. Compare your solution with that of problem 10.
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		float percentage;
+	} team;
+	struct team* next;
+};
+
+17.
+Declare pt to be a pointer to a structure whose composition is described in the previous problem. Then write a statement that will allocate appropriate block of memory with pt pointing to the beginning of the memory block.
+Ans.
+struct team
+{
+	char name[40];
+	struct record
+	{
+		int won;
+		int lost;
+		float percentage;
+	} stats;
+	struct team* next;
+};
+struct team* pt = (struct team*)malloc(sizeof(struct team));
+
+18.
+Define a structuer of type hms containing three integer members called hour, minute and second, respectively. Then define a union containing two members, each of type hms. Call the union members local and home respectively. Declare a pointer variable called time that points to this union.
+Ans.
+struct hms
+{
+	int hour;
+	int minute;
+	int second;
+};
+union 
+{
+	struct hms local;
+	struct hms home;
+} time*;
+
+19.
+Define a union of type ans which contains the following three members:
+a) An integer quantity called ians.
+b) A float quantity called as fans.
+c) A double precision quantity called as dans.
+Then define a structure which contains the following four members:
+a) A union of type ans called answer.
+b) A single character called flag.
+c) Integer quantities called a and b.
+Finally declare two structure variables called x and y whose composition is as described above.
+Ans.
+union ans
+{
+	int ians;
+	float fans;
+	double dans;
+};
+struct sample
+{
+	union ans answer;
+	char flag;
+	int a;
+	int b;
+};
+struct sample x, y;
+
+20.
+Declare a structure variable called v whose composition is as described in problem 19. Assign the following iniyial values within the declaration:
+answer : 14
+flag: 'i'
+a: -2
+b: 5
+Ans.
+union ans
+{
+	int ians;
+	float fans;
+	double dans;
+};
+struct sample
+{
+	union ans answer;
+	char flag;
+	int a;
+	int b;
+};
+struct sample v = {14,'i',-2,5};
+
+21.
+Modify the same structure definition described in problem 19 so that it contains an additional member, called next which is a pointer to another structure of the same type. (Note that the structure will now be a self-referential structure). Add a declaration of two varaibles called x and px where x is a structure variable and px is a pointer to a structure varaible. Assign starting address of x to px within the declaration.
+Ans.
+union ans
+{
+	int ians;
+	float fans;
+	double dans;
+};
+struct sample
+{
+	union ans answer;
+	char flag;
+	int a;
+	int b;
+	struct sample*;
+};
+
+struct sample x;
+struct sample* px = &x;
+
+22.
+Describe the output generated by each of the following programs. Explain any differences between the programs.
+a)
+//header file inclusion for IP OP functions
+#include<stdio.h>
+
+//structure declaration - 3 members - character pointer
+typedef struct
+{
+	char *a;
+	char *b;
+	char *c;
+} colors;
+
+//function declaration - argument is object of struct colors and returns nothing
+void funct(colors sample);
+
+main()
+{
+	//creation of object of struct colors and initialisation
+	static colors sample = {"red", "green", "blue"};
+	printf("%s %s %s\n",sample.a,sample.b,sample.c);	//output - red green blue
+	//call to function - send struct object sample as parameter - call by value
+	funct(sample);
+	//print values of struct object sample after return from function - values do not change as it was call by value
+	printf("%s %s %s\n",sample.a,sample.b,sample.c); //output - red green blue
+}
+
+//function definition
+void funct(colors sample)
+{
+	//change the values of the structure object sample - but that is a local object - changed values are not reflected in calling function
+	sample.a = "cyan";
+	sample.b = "magenta";
+	sample.c = "yellow";
+	printf("%s %s %s\n",sample.a, sample.b, sample.c);	//cyan, magenta, yellow
+}
+
+b)
+//header file for standard IP OP functions
+#include<stdio.h>
+//declaration of the structure colors - members are three character pointers
+typedef struct 
+{
+	char *a;
+	char *b;
+	char *c;
+} colors;
+
+//function declaration - takes pointer to structure object of type colors as argument
+void funct(colors *pt);
+
+//entry point function
+main()
+{
+	//creation of object of struct colors - and initialisation
+	static colors sample = {"red", "green", "blue"};
+	
+	//print values of members of the struct object sample
+	printf("%s %s %s\n",sample.a, sample.b, sample.c);	//red, green, blue
+	//call to function by reference - send pointer to struct object as parameter
+	funct(&sample);
+	//print value of struct object sample after returning from the function
+	printf("%s %s %s\n",sample.a, sample.b, sample.c);	//OP = cyan, magenta, yellow
+}
+
+//function definition
+void funct(colors *pt)
+{
+	//alter the values of the struct object sample - changes will be reflected in the calling function
+	pt->a = "cyan";
+	pt->b = "magenta";
+	pt->c = "yellow";
+	//print the values of the object after altering them
+	printf("%s %s %s\n",pt->a,pt->b,pt->c);	//OP = cyan, magenta, yellow
+	return;	
+}
+
+c)
+//header file inclusion
+#include<stdio.h>
+
+//declaration of struct colors - 3 character pointers as members
+typedef struct
+{
+	char* a;
+	char* b;
+	char* c;
+} colors;
+
+//function declaration
+colors funct(colors sample);
+
+//entry point function
+main()
+{
+	//create and initialise an object of struct colors
+	static colors sample = {"red", "green", "blue"};
+	//print the values of the members of the struct object colors
+	printf("%s %s %s\n",sample.a,sample.b,sample.c);		//OP = red green blue
+	//call the function - pass colors - accept return value in colors
+	sample = funct(colors);
+	//print the value of members of the struct colors after return from function
+	printf("%s %s %s\n",sample.a,sample.b,sample.c);		/OP = cyan magenta yellow
+}
+
+//function definition
+colors funct(colors sample)
+{
+	//change the values of members of struct colors
+	sample.a = "cyan";
+	sample.b = "magenta";
+	sample.c = "yellow";
+	//printf the values of members of colors after altering them
+	printf("%s %s %s\n",sample.a,sample.b,sample.c);	//OP = cyan magenta yellow
+	return the struct object sample
+	return sample;
+}
+
+23.
+Describe the output generated by the following program. Distinguish between meaningful and meaningless output.
+//header file inclusion
+#include<stdio.h>
+//entry point function
+main()
+{
+	//union declaration - 3 members int, float, double - memory allocated = sizeof double - largest union member
+	union 
+	{
+		int i;
+		float f;
+		double d;
+	} u;
+	
+	//print the size of union object u
+	printf("%d\n",sizeof u);
+	
+	//initialise the member i and print values of all union members
+	u.i = 100;
+	printf("%d %f %f\n",u.i,u.f,u.d);	//100,100,100
+	//initialise the member f and print values of all union members
+	u.f = 0.5;
+	printf("%d %f %f\n",u.i,u.f,u.d);	//0.5,0.5,0.5
+	//initialise the member d and print values of all union members
+	u.d = 0.0166667;
+	printf("%d %f %f\n",u.i,u.f,u.d);	//0.0166667,0.0166667,0.0166667
+}
+
+24.
+Describe the output generated by the following programs. Explain any differences between them.
+a)
+//header file inclusion
+#include<stdio.h>
+
+//declaration of union udef - 2 members int, float
+typedef union
+{
+	int i;
+	float f;
+} udef;
+
+//function declaration - parameter is union object, return is void
+void func(udef u);
+
+//entry point function
+main()
+{
+	//create object of union type udef
+	udef u;
+	
+	u.i = 100;
+	u.f = 0.5;
+	//call to function - by value
+	funct(u);
+	printf("%d %f\n",u.i, u.f);	//garbage 0.5
+}
+
+void funct(udef u)
+{
+	u.i = 200;
+	printf("%d %f\n",u.i,u.f);	//200 garbage
+	return;
+}
+
+b)
+#include<stdio.h>
+
+typedef union
+{
+	int i;
+	float f;
+} udef;
+
+void funct(udef u);
+
+main()
+{
+	udef u;
+	
+	u.i = 100;
+	u.f = 0.5;
+	funct(u);
+	printf("%d %f\n",u.i,u.f);	//garbage, 0.500000
+}
+
+void funct(udef u)
+{
+	u.f = -0.3;
+	printf("%d %f\n",u.i,u.f);	//garbage,-0.300000
+	return;
+}
+
+c)
+#include<stdio.h>
+
+typedef union
+{
+	int i;
+	float f;
+} udef;
+
+udef funct(udef u);
+
+main()
+{
+	udef u;
+	
+	u.i = 100;
+	u.f = 0.5;
+	//accept the return value in u - which is an object of union udef
+	u = funct(u);
+	printf("%d %f\n",u.i,u.f);	//garbage -0.300000
+}
+
+udef funct(udef u)
+{
+	u.f = -0.3;
+	printf("%d %f\n",u.i,u.f);	//garbage -0.300000
+	return(u);
+}

@@ -1,0 +1,572 @@
+1.
+Suppose a, b and c are integer variables that have been assigned the values a = 8, b = 3 and c = -5. Determine the value of each of the following expressions.
+Ans.
+a) a + b + c
+8 +3 + (-5)
+= 5
+b)
+2 * b + 3 * (a-c)
+2*3+3*(8-(-5))
+6+3*13
+6+39
+= 45
+c)
+a/b
+8/3
+= 2
+d)
+a%b
+8%3
+= 2
+e)
+a/c
+8/(-5)
+= -1
+f)
+a%c
+8%(-5)
+= -3
+g)
+a*b/c
+8*3/(-5)
+= -4
+h)
+a*(b/c)
+8*(3/(-5))
+= 0
+i)
+(a*c)%b
+(8*-5)%3
+-40%3
+= -1
+j)
+a*(c%b)
+8*(-5%3)
+= -16
+
+2.
+Suppose x,y,z are floating point variables that have been assigned the values x = 8.8, y = 3.5 and z = -5.2. Determine the value of each of the following arithmetic expressions
+a)
+x+y+z
+8.8+3.5+(-5.2)
+= 6.5
+
+b)
+2*y+3*(x-z)
+49
+
+c)
+x/y
+2.514286
+
+d)
+x%y
+error as % operator cannot be used for floating point numbers
+
+e)
+x/(y+z)
+8.8/(3.5-5.2)
+8.8/(-2.3)
+= -5.176471
+
+f)
+(x/y)+z
+(8.8/3.5)+(-5.2)
+2.514286-5.2
+= -2.685714
+
+g)
+2 * x / 3 * y
+2*8.8/3*3.5
+20.533333
+
+h)
+2*x/(3*y)
+2*8.8/(3*3.5)
+= 1.676190
+
+3.
+Suppose c1, c2 and c3 are character type variables that have been assigned the character E 5 and ? respectively.
+Determine the numerical value of the following expression based upon the ASCII character set.
+a)
+c1
+= 69
+
+b)
+c1 - c2 + c3
+69 - 53 + 63
+= 79
+
+c)
+c2 - 2
+53 - 2
+= 51
+
+d)
+c2 - '2'
+53 - 50
+= 3
+
+e)
+c3 + '#'
+63 + 35
+= 98
+
+f)
+c1 % c3
+69 % 63
+=7
+
+g)
+'2' + '2'
+50 + 50
+= 100
+
+h)
+(c1/c2)*c3
+(69/53)*63
+= 63
+
+i)
+3*c2
+3*53
+= 159
+
+j)
+'3' * c3
+51 * 63
+= 3213
+
+4
+A C program contains the following declarations
+int i,j;
+long ix;
+short s;
+float x;
+double dx;
+char c;
+Determine the data type of each of the following expressions
+a)
+i+c (int + char)
+= int
+
+b)
+x + c (float + char)
+= float
+
+c)
+dx + x (double + float)
+= double
+
+d)
+((int)dx) + ix
+= long
+
+e)
+i + x (int + float)
+float
+
+f)
+s + j (short + int)
+= int
+
+g)
+ix + j (long + int)
+= long
+
+h)
+s + c (short + char)
+= short
+
+i)
+ix + c (long + char)
+= long
+
+5.
+A C program contains the following declarations and initial assignments
+int i = 8, j = 5;
+float x = 0.005, y = -0.01;
+char c = 'c', d = 'd';
+Determine the value of each of the following expressions. Use the values initially assigned to the variables for each expression
+a)
+(3*i-2*j)%(2*d-c);
+(3*8-2*5)%(2*100-99);
+(16-10)%(200-99);
+6%1
+= 0
+
+b)
+2*((i/5)+(4*(j-3))%(i+j-2));
+2*((8/5)+(4*(5-3))%(8+5-2));
+2*(1+8%11);
+=18
+
+c)
+(i-3*j)%(c+2*d)/(x-y);
+(8-3*5)%(99+2*100)/(0.005-(-0.01));
+-7%299/0.015;
+-466.666667
+
+d)
+-(i+j)
+-(8+5)
+= -13
+
+e)
+++i
+= 9
+
+f)
+i++
+= 9
+
+g)
+-j
+= -5
+
+h)
+++x
+++(0.005)
+= 1.005000;
+
+i)
+y--
+(-0.01)--
+= -1.010000
+
+j)
+i<=j
+= 0
+
+k)
+c>d
+= 0
+
+l)
+x>=0
+= 1
+
+m)
+x<y
+= 0
+
+n)
+j != 6
+= 1
+
+o)
+c == 99
+= 1
+
+p)
+5 * (i+j) > 'c'
+65>99
+= 0
+
+q)
+(2*x+y) == 0
+(2*0.005+-0.01) == 0
+-0.01 == 0
+= 0
+
+r)
+2*x+(y==0)
+2*0.005+0
+= 0.010000
+
+s)
+2*x+y==0
+2*0.005+0
+= 0.010000
+
+t)
+!(i<=j)
+!(8<=5)
+= 1
+
+u)
+!(c == 99)
+= 0
+
+v)
+!(x > 0)
+!(0.005>0)
+= 0
+
+w)
+(i>0)&&(j<5)
+(8>0)&&(5<5)
+1&&0
+= 0
+
+x)
+(i>0)||(j<5)
+(8>0)||(5<5)
+1||0
+= 1
+
+y)
+(x>y)&&(i>0)&&(j<5)
+(0.005>-0.01)&&(8>0)&&(5<5)
+1&&1||0
+= 1
+
+z)
+(x>y)&&(i>0)&&(j<5)
+(0.005>-0.01)&&(8>0)&&(5<5)
+1&&1&&0
+= 0
+
+6.
+A C program contains the following declarations and initial assignments
+int i = 8, j = 5, k;
+float x = 0.005, y = -0.01, z;
+char a, b, c = 'c', d = 'd';
+Determine the value of each of the following assignment expressions. Use the values originally assigned to the variables for each expression.
+a)
+k = (i+j);
+k = 13;
+
+b)
+z = (x+y);
+z = (0.005-0.01);
+z = -0.005;
+
+c)
+i = j;
+i = 5;
+
+d)
+k = (x+y);
+k = (0.005-0.01);
+k = -0.005;
+
+e)
+k = c;
+k = 99;
+
+f)
+z = i/j;
+z = 8/5;
+z = 1;
+
+g)
+a = b = d;
+b = 100;
+a = 100;
+
+h)
+i = j = 1.1;
+i = 1.1;
+
+i)
+z = k = x;
+k = 0.005;
+z = 0.005;
+
+j)
+k = z = x;
+z = 0.005;
+k = 0.005;
+
+k)
+i + = 2;
+i = i+2;
+i = 8+2;
+i = 10;
+
+l)
+y -= x;
+y = y - x;
+y = -0.01 - 0.005;
+y = -0.015;
+
+m)
+x *= 2;
+x = x*2;
+x = 0.005 * 2;
+x = 0.01;
+
+n)
+i/=i;
+i = i/i;
+i = 8/8;
+i = 1;
+
+o)
+i%=j;
+i = i%j;
+i = 8%5;
+i = 3;
+
+p)
+i += (j-2)
+i = i+(j-2);
+i = 8+(5-2);
+i = 11;
+
+q)
+k = (j==5)?i:j
+(j==5) is true = 1
+hence, k = i;
+k = 8;
+
+r)
+k = (j>5)>i:j;
+j>5
+(5>5) is false
+hence, k = j;
+k = 5;
+
+s)
+z = (x>=0)?x:0
+(x>=0)
+(0.005>=0) is true
+hence, z = x;
+z = 0.005;
+
+t)
+z = (y>=0)?y:0
+(y>=0)
+(-0.01>=0) is false
+hence z = 0;
+
+u)
+a = (c<d)?c:d
+(c<d)
+(99<100) is true
+hence a = c;
+a = 99;
+
+v)
+i -= (j>0)?j:0
+i = i-(j>0)?j:0;
+i = 8-(5>0)?j:0;
+i = 8-5;
+i = 3;
+
+7.
+Each of the following expression involves the use of a library function. Identify the purpose of each expression.
+a)
+abs(i-2*j);
+abs(8-2*5);
+abs(-2);
+= 2;
+abs library function return the absolute value of its operand (positive value)
+
+b)
+fabs(x+y);
+fabs(0.005-0.01);
+fabs(-0.005);
+= 0.005;
+fabs returns the absolute value of its operand which is a double
+
+c)
+isprint(c);
+returns true;
+isprint() library function checks if its operand is a printable character or not
+
+d)
+isdigit(c);
+returns false
+isdigit() library function checks if its operand is a digit or not
+
+e)
+toupper(d);
+'D';
+this library function returns the upper case equivalent of its operand
+
+f)
+ceil(x);
+ceil(0.005);
+= 1.000000;
+return the ceil value of its operand
+
+g)
+floor(x+y);
+floor(0.005-0.01);
+floor(-0.005);
+= -1.000000;
+
+h)
+islower(c);
+= 1
+this library function returns true if its operand is a lower case character
+
+i)
+isupper(j);
+= 0
+returns true if its operand is an upper case character
+
+j)
+exp(x);
+exp(0.005);
+= 1.005013
+this function raises e to the power x
+e = 2.7
+= 1.005013
+
+k)
+log(x);
+log(0.005)
+this returns log of x means 10 to the power of x
+-5.2983171.011579
+
+l)
+sqrt(x*x+y*y);
+sqrt(0.005*0.005+0.01*0.01);
+sqrt(0.001025);
+0.011180
+returns squareroot of its operand
+
+m)
+isalnum(10*j);
+isalnum(50);
+returns true if its operand is alphanumeric
+= 1
+
+n)
+iaalpha(10*j);
+returns true if its operand is alphabet
+
+o)
+isascii(10*j);
+= 1;
+returns true if its operand is an ascii code
+
+p)
+toascii(10*j);
+returns ascii value of its operand
+= 50
+
+q)
+fmod(x,y);
+fmod(0.005,-0.01);
+returns remainder of x divided by y
+
+r)
+tolower(65);
+= a
+returns lower equivalent ascii character of its operand
+
+s)
+pow(x-y,3.0);
+pow(0.005-(-0.01),3.0);
+= 0.000003
+pow(x,y) - returns power of x raise to y
+
+t)
+sin(x-y);
+sin(-0.005);
+= 0.014999;
+return sine value of its operand
+
+u)
+strlen("hello\0");
+= 5
+returns number of characters in its operand
+
+v)
+strpos("hello",'e');
+returns the position of character in string
+= 1

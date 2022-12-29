@@ -1,0 +1,215 @@
+1.
+Determine which of the following are valid identifiers.
+a) record1 - valid
+b) 1record - invalid as it begins with a number
+c) file_3 - valid
+d) return - invalid as return is a keyword and keywords should not be used as identifier names
+e) $tax - invalid, does not begin with an alphabet, contains special character $
+f) name - valid
+g) name and address - invalid as it contains spaces
+h) name_and_address - valid
+i) name-and-address - invalid as it contains special character -
+j) 123-45-6789 - invalid as it contains only numbers, begins with number, contains special character -
+
+2.
+Assume that your version of C can recognise only the first 8 characters of an identifier name, though identifier names may be arbitrarily long. Which of the following pairs of identifier names are considered to be identical and which are distinct?
+a) name, names - distinct
+b) address, Addresses - distinct as case of first letter is different
+c) identifier_1, identifier_2 - identical as first 8 characters are same
+d) list1, Iist2 - distinct
+e) answer, ANSWER - distinct as the case is different
+f) char1, char_1 - distinct
+
+3.
+Determine which of the following numerical values are valid constants. If a constant is valid, specify wheteher it is integer or real. Also, specify the base for each vaild integer constant.
+Ans.
+a) 0.5 - valid constant
+b) 27,233 - invalid as comma in the constant is not allowed
+c) 9.3e12 - valid, it is a real constant, base is 10
+d) 9.36-12 - invalid, correct would be 9.36e-12
+f) 12345678 - valid integer constant
+g) 0.8E+0.8 - invalid as exponent must be an integer quantity, it cannot contain decimal point
+h) 0.8E 8 - invalid as there should not be a space in exponent
+i) 0515 - valid - 0 at the beginning indicates it is octal integer
+j) 018CDF - invalid, octal number cannot contain alphabets
+k) 0XBCFDAL - inavlid, hexadecimal number can contain digits 0 to 9 and letters A to E
+l) 0x87e3ha - invalid, hexadecimal number can contain digits 0 to 9 and letters a to e or A to E
+
+4.
+Determine which of the following are valid character constants
+Ans.
+a) 'a' - valid
+b) ' $' - invalid as it should contain single character enclosed in single quotes
+c) '\n' - valid as it is a escape sequence (newline) which can contain 2 characters
+d) ' \\ ' - invalid because of the leading and trailing spaces
+e) '\a' - invalid as it has multiple characters and it is not a valid escape sequence
+f) 'T' - valid
+g) ' \0' - invalid because of the leading space character
+h) 'xyz' - invalid - as there are multiple characters
+i) '\052' - invalid as there are multiple characters enclosed in single quotes
+
+5.
+Determine which of the following are valid string constants.
+Ans.
+a) '8.15 P.M.' - invalid as it is not enclosed in double quotes
+b) "Red, White and Blue" - valid string constant
+c) "Name: - invalid as there are no closing double quotes
+d) "Chap. 3 (Cont\ 'd)" - valid string constant
+e) "1.3e-12" - valid string constant
+f) "NEW YORX, NY 10020" - valid string constant
+g) "The professor said, "Please don't sleep in class" - invalid string constant as the double quotes are not matching
+
+6.
+Write appropriate declarations for each group of variables and arrays.
+a) Integer variables: p, q
+int p;
+int q;
+Floating-point variables: x, y, z
+float x;
+float y;
+float z;
+Character variables: a,b,c
+char a;
+char b;
+char c;
+b) Floating-point variables: root1, root2
+float root1;
+float root2;
+Long integer variable: counter
+long int counter;
+Short integer variable: flag
+short int flag;
+c) Integer variable: index
+int index;
+Unsigned integer variable: cust_no
+unsigned int cust_no;
+Double-precision variables: gross, tax, net
+double gross;
+double tax;
+double net;
+d) Character variables: current, last
+char current;
+char last;
+Unsigned integer variable: count
+insigned int count;
+Floating-point variable: error
+float error;
+e) Character variable: first, last
+char first;
+char last;
+80-element character array: message
+char message[80];
+
+7.
+Write appropriate declarations and assign the given initial values for each group of variables and arrays.
+a) Floating-point varaibles: a = -8.2, b = 0.005
+float a = -8.2;
+float b = 0.005;
+Integer varaibles: x = 129, y = 87, z = -22
+int x = 129;
+int y = 87;
+int z = -22;
+Character variables: c1 = 'w', c2 = '&'
+char c1 = 'w';
+char c2 = '&';
+b) Double-precision varaibles: d1 = 2.88 * 10^-8, d2 = -8.4 * 10^5
+double d1 = 2.88E-8;
+double d2 = -8.4E5;
+Integer varaibles: u = 711 (octal), v = ffff (hexadecimal)
+int u = 0711;
+int v = 0xffff;
+c)Long integer variable: big = 123456789
+long int = 123456789;
+Double-precision variable c = 0.3333333333
+double c = 0.3333333333
+Character variable eol = newline character
+char eol = '\n';
+d) One-dimensional character array: message = "ERROR"
+char message[] = "ERROR";
+
+8
+Explain the purpose of each of the following expressions.
+a)
+a - b
+value of b is subtracted from value of a
+b)
+a * (b + C)
+b is added to c, the result is multiplied with a
+c) 
+d = a * (b + c)
+b is added to c and the result is multiplied by a and the final result is assigned to d
+d) 
+a >= b
+returns true if value of a is greater than or equal to value of b
+e)
+(a % 5) == 0
+return true if remainder of a divided by 5 is 0, false otherwise
+f)
+a < (b / c)
+b is divided by c, if the quotient is greater than a, returns true, false otherwise
+g)
+-a
+reverses the sign of a
+
+9.
+Identify whether each of the following statements is an expression statement, a compound statement or a control statement
+a)
+a * (b + c);
+expression statement
+b)
+while(a<100)
+{
+	d = a * (b + c);
+	++a;
+}
+control statement
+c)
+if(x>0)
+	y = 2.0;
+else
+	y = 3.0;
+control statement
+d)
+{
+	++x;
+	if(x>0)
+		y = 2.0;
+	else
+		y = 3.0;
+	printf("%f",y);
+}
+compound statement
+e)
+{
+	++x;
+	if(x>0)
+	{
+		y = 2.0;
+		z = 6.0;
+	}
+	else
+	{
+		y = 3.0;
+		z = 9.0;
+	}
+}
+compound statement
+
+10.
+Write an appropriate definition for each of the following symbolic constants, as it would appear within a C program.
+Constant	Text
+FACTOR		-18
+ERROR		0.0001
+BEGIN		{
+END			}
+NAME		"Sharon"
+EOLN		'\n'
+COST		"$19.95"
+Ans.
+#define FACTOR -18
+#define ERROR 0.0001
+#define BEGIN	'{'
+#define END '}'
+#define NAME "Sharon"
+#define EOLN  '\n'
+#define COST  "$19.95"
