@@ -1,0 +1,45 @@
+/*
+Problem Statement: Implement the cat command
+Usage: cat filename
+where filename is the name of the file whose contents are to be read
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<fcntl.h>
+
+void DisplayFile(char *fname[])
+{
+	//variable to hold file descriptor;
+	int fd = 0;
+	//buffer to read the file data
+	char buffer[1024] = {'\0'};
+	//variable to hold return value of read system call
+	int iRet = 0;
+	
+	//open the file in read only mode
+	fd = open(fname,O_RDONLY);
+	//Read data from file in chunks of 1024 bytes
+	while((iRet = read(fd,buffer,sizeof(buffer))) != 0)
+	{
+		//write the data read on standard output(fd = 1)
+		write(1,buffer,iRet);
+	}
+	//close the file
+	close(fd);
+}
+
+int main(int argc, char *argv[])
+{
+	//check for correct number of arguments
+	if(argc != 2)
+	{
+		printf("Error: Invalid number of arguments\n");
+		return -1;
+	}
+	
+	DisplayFile(argv[1]);
+	
+	return 0;
+}

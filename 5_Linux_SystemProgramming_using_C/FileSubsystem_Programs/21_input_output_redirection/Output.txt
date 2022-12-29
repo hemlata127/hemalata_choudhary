@@ -1,0 +1,6 @@
+Enter three numbers:
+Addition is 70
+Enter three numbers:
+Addition is 70
+Enter three numbers:
+Addition is 70

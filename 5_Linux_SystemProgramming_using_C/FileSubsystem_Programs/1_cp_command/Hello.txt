@@ -1,0 +1,58 @@
+/*
+Implementation of cp command:
+Implement cp command which is used to copy contents from one file into another file.
+Usage:
+cp File1.txt File2.txt
+We have to create File2.txt and write all the data from File1.txt into it.
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<fcntl.h>
+#include<unistd.h>
+
+//cp Demo.txt Hello.txt
+//cp argv[1] argv[2]
+//argv[1] - open file in read mode
+//argv[2] - create new file
+
+int main(int argc, char *argv[])
+{
+	int fdsrc = 0, fddest = 0;
+	int iRet1 = 0,iRet2 = 0;
+	char buffer[1024] = {'\0'};
+	
+	if(argc != 3)
+	{
+		printf("Error: Invalid Arguments\n");
+		printf("Usage: cp Source.txt Destination.txt\n");
+		return -1;
+	}
+	
+	fdsrc = open(argv[1],O_RDONLY);
+	if(fdsrc == -1)
+	{
+		printf("Inable to open source file: %s\n",argv[1]);
+		return -1;
+	}
+	
+	fddest = creat(argv[2],0777);
+	if(fddest == -1)
+	{
+		printf("Unable to create destination file: %s\n",argv[2]);
+		close(fdsrc);
+		return -1;
+	}
+	
+	while((iRet1 = read(fdsrc,buffer,sizeof(buffer))) != 0)
+	{
+		write(fddest,buffer,iRet1);
+	}
+	
+	close(fdsrc);
+	close(fddest);
+	
+	printf("Copy successful\n");
+	
+	return 0;
+}
