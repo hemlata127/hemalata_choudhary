@@ -1,3 +1,0 @@
-/*
-header file for binary search tree application
-*/

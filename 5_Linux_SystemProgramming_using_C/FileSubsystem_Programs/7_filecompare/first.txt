@@ -1,1 +1,0 @@
-Write a program which accept two file names from user and check whether contents of that two files are equal are not.
